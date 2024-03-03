@@ -2,13 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const moment = require('moment-timezone');
-
-// Set the desired timezone to Indian Standard Time (IST)
-const desiredTimezone = 'Asia/Kolkata'; // Indian Standard Time
-
-// Set the timezone for the application
-moment.tz.setDefault(desiredTimezone);
+// Set the timezone to Indian Standard Time (IST)
+process.env.TZ = 'Asia/Kolkata';
 
 // Import routes
 const routes = require('./routes/index');
